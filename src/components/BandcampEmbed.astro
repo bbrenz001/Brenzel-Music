@@ -1,0 +1,20 @@
+---
+interface Props {
+  full?: boolean;
+}
+const { full = false } = Astro.props;
+
+const label = full
+  ? '[Bandcamp catalog embed — paste embed code from bandcamp.com/artist-tools]'
+  : '[Bandcamp player embed — paste embed code from bandcamp.com/artist-tools]';
+---
+
+<div class="bandcamp-wrap">
+  <p class="placeholder">{label}</p>
+</div>
+
+<style>
+.bandcamp-wrap {
+  width: 100%;
+}
+</style>

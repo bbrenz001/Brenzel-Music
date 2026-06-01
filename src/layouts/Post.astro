@@ -1,0 +1,57 @@
+---
+import Base from './Base.astro';
+
+interface Props {
+  title: string;
+  date: Date;
+}
+
+const { title, date } = Astro.props;
+
+const formatted = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<Base title={`${title} — Brenzel Music`}>
+  <article class="post">
+    <header>
+      <time class="post-date" datetime={date.toISOString()}>{formatted}</time>
+      <h1>{title}</h1>
+    </header>
+    <hr class="rule" />
+    <div class="post-body">
+      <slot />
+    </div>
+  </article>
+</Base>
+
+<style>
+.post {
+  max-width: 640px;
+}
+
+.post-date {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.post-body {
+  margin-top: 1.25rem;
+}
+
+.post-body :global(p) {
+  margin-bottom: 1em;
+}
+
+.post-body :global(h2) {
+  margin: 1.5em 0 0.5em;
+}
+</style>

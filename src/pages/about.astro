@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="About — Brenzel Music">
+  <div class="about-grid">
+    <div class="about-text">
+      <h1>About</h1>
+      <hr class="rule" />
+      <p>Brenzel makes music.</p>
+      <p>Brooklyn, NY.</p>
+    </div>
+    <div class="about-art">
+      <p class="placeholder">[Artwork — drop scanned images into public/images/ and add img tags here]</p>
+    </div>
+  </div>
+</Base>
+
+<style>
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding-top: 1.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  margin-bottom: 0.75em;
+}
+
+@media (max-width: 680px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
