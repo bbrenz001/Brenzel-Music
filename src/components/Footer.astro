@@ -1,0 +1,29 @@
+---
+const links = [
+  { href: 'mailto:brian@brenzelmusic.com', label: 'brian@brenzelmusic.com' },
+  { href: '#', label: 'youtube' },
+  { href: '#', label: 'tiktok' },
+  { href: '#', label: 'instagram' },
+  { href: '#', label: 'bandcamp' },
+];
+---
+
+<footer class="site-footer">
+  <p>
+    {links.map((link, i) => (
+      <>
+        <a href={link.href}>{link.label}</a>
+        {i < links.length - 1 && <span aria-hidden="true"> · </span>}
+      </>
+    ))}
+  </p>
+</footer>
+
+<style>
+.site-footer {
+  border-top: 0.5px solid #000;
+  margin-top: 3rem;
+  padding: 0.6rem 0 1.25rem;
+  font-size: 0.72rem;
+}
+</style>
