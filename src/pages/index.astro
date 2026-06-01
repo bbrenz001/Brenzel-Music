@@ -11,13 +11,6 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <Base title="Brenzel Music">
-  <section class="hero">
-    <h1 class="hero-headline">Music from<br />the margins.</h1>
-    <p class="dateline">Brooklyn, NY</p>
-  </section>
-
-  <hr class="rule" />
-
   <div class="home-grid">
     <div class="col-main">
       <p class="col-label">Latest Sounds</p>
@@ -34,22 +27,6 @@ const posts = (await getCollection('blog')).sort(
 </Base>
 
 <style>
-.hero {
-  padding: 2rem 0 1.5rem;
-}
-
-.hero-headline {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.dateline {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-}
-
 .home-grid {
   display: grid;
   grid-template-columns: 3fr 2fr;
