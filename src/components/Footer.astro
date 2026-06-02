@@ -12,7 +12,10 @@ const links = [
   <p>
     {links.map((link, i) => (
       <>
-        <a href={link.href}>{link.label}</a>
+        <a
+          href={link.href}
+          {...(link.href.startsWith('http') && { target: '_blank', rel: 'noopener noreferrer' })}
+        >{link.label}</a>
         {i < links.length - 1 && <span aria-hidden="true"> · </span>}
       </>
     ))}
